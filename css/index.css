@@ -161,8 +161,15 @@ header .con2 p a{
 	height: 515.391px;
 	position: relative;
 }
+.ImgBox img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
 .ImgBox .iconfont{
 	color: rgba(255, 255, 255, 0.7);
+	z-index: 20;
 }
 .ImgBox .icon-left-copy{
 	font-size: 36px;
@@ -187,6 +194,7 @@ header .con2 p a{
 	position: absolute;
 	bottom: 10px;
 	text-align: center;
+	z-index: 20;
 }
 .ImgBox .btn .iconfont{
 	width: 10px;
