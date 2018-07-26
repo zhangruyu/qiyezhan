@@ -334,9 +334,9 @@ header .con2 p a{
 	height: 462px;
 	float: right;
 	position: relative;
-	overflow-x: auto;
+	overflow: hidden;
 }
-.CON2 .cons .right .bigbox{
+/* .CON2 .cons .right .bigbox{
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -344,13 +344,14 @@ header .con2 p a{
 }
 .CON2 .cons .right::-webkit-scrollbar{
 	height: 0;
-}
+} */
 .CON2 .cons .right .IMG{
 	display: block;
 	width: 425px;
 	height: 462px;
-	flex-shrink: 0;
-	margin-right: 20px;
+	position: absolute;
+	left: 870px;
+	top: 0;
 }
 .CON2 .cons .right .after{
 	text-align: center;
