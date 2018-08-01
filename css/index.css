@@ -336,15 +336,6 @@ header .con2 p a{
 	position: relative;
 	overflow: hidden;
 }
-/* .CON2 .cons .right .bigbox{
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: space-between;
-}
-.CON2 .cons .right::-webkit-scrollbar{
-	height: 0;
-} */
 .CON2 .cons .right .IMG{
 	display: block;
 	width: 425px;
@@ -362,7 +353,7 @@ header .con2 p a{
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	background-color: rgba(0, 0, 0, 0.7);;
+	background-color: rgba(0, 0, 0, 0.7);
 	z-index: 100;
 }
 .CON2 .cons .right .iconfont{
@@ -393,7 +384,7 @@ header .con2 p a{
 	margin: 0 3px;
 	color: rgba(0, 0, 0, 0.3);
 }
-.CON2 .cons .right .after .iconfont:hover{
+.CON2 .cons .right .after .hot7{
 	color: blue;
 }
 .CON3{
@@ -810,7 +801,7 @@ header .con2 p a{
 }
 .CON7 .imgBOX .cons .con{
 	flex-shrink: 0;
-	width: 125px;
+	width: 135px;
 	height: 140px;
 	padding: 0 20px;
 	box-sizing: border-box;

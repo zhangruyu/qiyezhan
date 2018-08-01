@@ -65,12 +65,14 @@ window.onload=function(){
 	let boxs=box.querySelectorAll(".IMG");
 	let left1=box.querySelector(".icon-left-copy");
 	let right1=box.querySelector(".icon-you");
+	let yuan=box.querySelectorAll(".icon-huiyuan");
 	console.log(left1,right1);
 
 	let now=0;
 	let next=0;
 	let next1=0;
 	let flag=true;
+	let New=0;
 	let p=setInterval(move3,2000);
 	box.onmouseenter=function(){
 		clearInterval(p);
@@ -87,32 +89,40 @@ window.onload=function(){
 		if(next==boxs.length-1){
 			next1=0;
 		}
+		/*yuan.forEach(function(v){
+			v.classList.remove("hot7");
+		})
+		yuan[next].classList.add("hot7");*/
 		boxs[next1].style.left=870+"px";
 		animate(boxs[now],{left:-425});
 		animate(boxs[next],{left:0});
 		animate(boxs[next1],{left:445},function(){
 			flag=true;
 		})
-		now=next;
+		now++;
+		if(now==boxs.length){
+			now=0;
+		}
 	}
 	function move4(){
-		next=now-1;
-		if(now==0){
-			next=boxs.length-1;
+		next=now+1;
+		if(now==boxs.length-1){
+			next=0;
 		}
-		next1=next-1;
-		if(next==0){
+		next1=now-1;
+		if(now==0){
 			next1=boxs.length-1;
 		}
-		// console.log(next1,next,now);
 		boxs[next1].style.left=-425+"px";
-		animate(boxs[now],{left:870});
-		animate(boxs[next],{left:445});
+		animate(boxs[next],{left:870});
+		animate(boxs[now],{left:445});
 		animate(boxs[next1],{left:0},function(){
 			flag=true;
 		})
-		now=next;
-		// next=next1;
+		now--;
+		if(now<0){
+			now=boxs.length-1;
+		}
 	}
 
 	right1.onclick=function(){
@@ -122,14 +132,67 @@ window.onload=function(){
 		flag=false;
 		move3();
 	}
-	/*left1.onclick=function(){
+	left1.onclick=function(){
 		if(!flag){
 			return;
 		}
 		flag=false;
-		console.log(now);
 		move4();
-	}*/
-	
-
+	}
+	/*yuan.forEach(function(v,i){
+		v.onclick=function(){
+			if(i>next+1){
+				animate(boxs[now],{left:-425});
+				if(now==boxs.length-1){
+					animate(boxs[0],{left:-425});
+				}
+				else{
+					animate(boxs[now+1],{left:-425});
+				}
+				now=i;
+				boxs[now].style.left=870+"px";
+				if(now==boxs.length-1){
+					boxs[0].style.left=1315+"px";
+				}
+				else{
+					boxs[now+1].style.left=1315+"px";
+				}
+				animate(boxs[now],{left:0});
+				if(now==boxs.length-1){
+					animate(boxs[0],{left:445});
+				}
+				else{
+					animate(boxs[now+1],{left:445});
+				}
+				console.log(now,next);
+			}
+			if(i=next+1){
+				animate(boxs[now],{left:-425});
+				/*if(now==boxs.length-1){
+					animate(boxs[0],{left:-425});
+				}
+				else{
+					animate(boxs[now+1],{left:-425});
+				}*/
+				// now=i;
+				// boxs[now].style.left=870+"px";
+				/*if(now==boxs.length-1){
+					boxs[0].style.left=870+"px";
+				}
+				else{
+					boxs[now+1].style.left=870+"px";
+				}
+				animate(boxs[now],{left:0});
+				if(now==boxs.length-1){
+					animate(boxs[0],{left:445});
+				}
+				else{
+					animate(boxs[now+1],{left:445});
+				}
+				now++;
+				console.log(now,next);
+			}
+		}
+	})
+*/
 }
